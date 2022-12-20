@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e43500;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e43500;
+}
+body {
+  background: #ffceb1;
+}
+.container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  animation: fadeIn 2s linear 0s alternate;
+}
+.content {
+  background-color: #112035;
+  width: 450px;
+  height: 650px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid #e43500;
+}
+
+.header h1 {
+  margin: 20px auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 50px;
+  background: -webkit-linear-gradient(90deg, #fdfdfd 20%, #e43500 60%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.form-content {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  padding: 0 10px;
+}
+.form-content input {
+  flex: 3;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.form-content input:focus {
+  border: 3px solid #e43500;
+  padding: 9px 15px;
+}
+.form-content button {
+  flex: 1;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.form-content button:hover {
+  background-color: #e43500;
+  color: #f1f1f1;
+  transform: scale(1.05);
+  transition: all 0.1s ease-in-out;
+}
+.clear {
+  color: #f1f1f1;
+  margin: 5px 10px;
+  display: flex;
+  justify-content: right;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  margin: 5px 0 0;
+  font-weight: 700;
+}
+.filter-content {
+  display: flex;
+  align-items: center;
+  color: #f1f1f1;
+  justify-content: space-between;
+  width: 94%;
+  margin-left: 15px;
+}
+.filter-control {
+  display: flex;
+  margin: 10px 0 5px 5px;
+  justify-content: space-between;
+  width: 94%;
+}
+.filter-button {
+  background-color: #f1f1f1;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+.filter-button:focus,
+.filter-button:hover {
+  border-color: #e43500;
+  background-color: #e43500;
+  color: #f1f1f1;
+}
+
+.list-container {
+  margin: 15px auto 5px;
+  height: 350px;
+  overflow-x: hidden;
+  padding: 0px 5px;
+  width: 95%;
+}
+
+.list-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+  list-style: none;
+  border-radius: 10px;
+  margin: 0px auto 10px auto;
+  align-items: center;
+  padding: 10px 0px;
+}
+.list-text {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.list-todo-text {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  width: 100%;
+  margin-left: 5px;
+  outline: none;
+  cursor: default;
+}
+.list-todo-text:focus {
+  outline: none;
+}
+.list-settings {
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+.item {
+  font-size: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#complete,
+#edit,
+#save {
+  border: none;
+  background-color: transparent;
+}
+#complete,
+#edit:disabled {
+  cursor: no-drop;
+}
+.disabled {
+  cursor: no-drop;
+}
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+  cursor: default;
+}
+
+.footer-container {
+  display: flex;
+  margin: 15px auto;
+  align-items: center;
+  justify-content: center;
+}
+.footer-container h3 {
+  color: #f1f1f1;
+  font-weight: 500;
+  letter-spacing: 5px;
+  animation-name: fadeIn;
+  animation-duration: 5s;
+}
+.footer-container:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    overflow: hidden;
+  }
+  .container {
+    margin: 30px auto;
+  }
+  .content {
+    padding: 20px;
+    width: 90%;
+    height: 80%;
+  }
+  .list-container {
+    width: 100%;
+    min-height: 80%;
+  }
+  .list-content {
+    padding: 30px 0px;
+    margin-bottom: 20px;
+  }
+  .list-todo-text {
+    font-size: 35px;
+  }
+  .item {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .container {
+    width: 90%;
+    height: 100%;
+  }
+  .content {
+    margin: 1px auto;
+    padding: 5px;
+    width: 95%;
+    height: 100%;
+  }
+  .header h1 {
+    margin: 8px auto;
+    font-size: 20px;
+  }
+
+  .form-content {
+    width: 93%;
+    margin: 5px auto;
+    margin-left: 5px;
+  }
+  .form-content input {
+    padding: 5px;
+    font-size: 17px;
+    margin-right: 5px;
+  }
+
+  .form-content button {
+    font-size: 15px;
+  }
+  .filter-content {
+    width: 92%;
+    margin-left: 10px;
+  }
+  .filter-control {
+    margin: 5px 0 5px 5px;
+    width: 92%;
+  }
+  .filter-button {
+    width: 80px;
+  }
+  .list-container {
+    width: 90%;
+    min-height: 80%;
+  }
+  .list-content {
+    padding: 15px 0px;
+    margin-bottom: 15px;
+  }
+  .list-todo-text {
+    font-size: 17px;
+  }
+  .item {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header h1 {
+    font-size: 40px;
+  }
+  .filter-content {
+    width: 90%;
+    margin-left: 10px;
+    font-size: 17px;
+  }
+  .filter-button {
+    width: 75px;
+    font-size: 14px;
+  }
+}
